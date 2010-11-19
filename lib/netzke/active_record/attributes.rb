@@ -155,7 +155,7 @@ module Netzke::ActiveRecord::Attributes
   end
 
   def value_for_attribute(a)
-    v = a[:getter] ? a[:getter].call(self) : send(a[:name])
+    v = a[:getter] ? a[:getter].call(self) : (a[:name].present? && send(a[:name]))
     # a work-around for to_json not taking the current timezone into account when serializing ActiveSupport::TimeWithZone
     v = v.to_datetime.to_s(:db) if v.is_a?(ActiveSupport::TimeWithZone)
     v

@@ -1,5 +1,7 @@
 = v0.6.3 - EDGE
 * compatibility with netzke-core 0.6.5
+* enhancements
+  * It's now possible to specify a ptype (e.g. 'rowexpander') for a column in GridPanel, and the column will be treated as a plugin
 
 * refactoring
 	* GridPanel code restructured, using the new +js_mixin+ method
