@@ -186,7 +186,7 @@ module Netzke
           :columns_order => config[:persistence] && state[:columns_order] || initial_columns_order,
           :model => config[:model], # the model name
           :inline_data => (get_data if config[:load_inline_data]), # inline data (loaded along with the grid panel)
-          :pri => data_class.primary_key # table primary key name
+          :pri => data_class_primary_key # table primary key name
         })
       end
 
