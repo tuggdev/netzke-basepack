@@ -137,6 +137,8 @@ module Netzke
 
         relation = relation.where(meta_where)
 
+	relation = relation.extend_with(self.send(params[:scope], params[:scope_params])) if params[:scope]
+
         relation = relation.extend_with(config[:scope]) if config[:scope]
 
         relation
