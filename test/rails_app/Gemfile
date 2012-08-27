@@ -5,7 +5,7 @@ gem 'rails', '3.0.5'
 gem 'netzke-core',        :path => File.expand_path('../vendor/gems/netzke-core', __FILE__)
 gem 'netzke-persistence', :path => File.expand_path('../vendor/gems/netzke-persistence', __FILE__)
 
-gem 'will_paginate', '3.0.pre2'
+gem 'kaminari', '0.13.0'
 gem 'meta_where'
 gem 'acts_as_list'
 
