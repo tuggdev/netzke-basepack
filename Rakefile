@@ -11,7 +11,7 @@ begin
     gemspec.authors = ["Sergei Kozlov"]
     gemspec.add_dependency("netzke-core", "~>0.6.7")
     gemspec.add_dependency("meta_where", ">=0.9.3")
-    gemspec.add_dependency("will_paginate", "~>3.0.pre2")
+    gemspec.add_dependency("kaminari", "~>0.13.0")
     gemspec.add_dependency("acts_as_list")
     gemspec.post_install_message = <<-MESSAGE
 
