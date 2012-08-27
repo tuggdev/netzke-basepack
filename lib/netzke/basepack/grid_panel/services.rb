@@ -1,6 +1,6 @@
 require 'active_record'
 require 'meta_where'
-require 'will_paginate'
+require 'kaminari'
 
 module Netzke
   module Basepack
@@ -161,7 +161,7 @@ module Netzke
             {}.tap do |res|
               records = get_records(params)
               res[:data] = records.map{|r| r.to_array(columns(:with_meta => true))}
-              res[:total] = records.total_entries if config[:enable_pagination]
+              res[:total] = records.total_count if config[:enable_pagination]
 
               # provide association values for all records at once
               # assoc_values = get_association_values(records, columns)
@@ -230,7 +230,7 @@ module Netzke
             if config[:enable_pagination]
               per_page = config[:rows_per_page]
               page = params[:limit] ? params[:start].to_i/params[:limit].to_i + 1 : 1
-              relation.paginate(:per_page => per_page, :page => page)
+              relation.page(page).per(per_page)
             else
               relation.all
             end
